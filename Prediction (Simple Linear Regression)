@@ -1,0 +1,17 @@
+from sklearn.linear_model import LinearRegression
+
+stock['Days'] = np.arange(len(stock))
+
+X = stock[['Days']]
+Y = stock['Close']
+
+model = LinearRegression()
+model.fit(X, Y)
+
+stock['Prediction'] = model.predict(X)
+
+plt.figure(figsize=(12,6))
+plt.plot(stock['Close'], label="Actual")
+plt.plot(stock['Prediction'], label="Predicted")
+plt.legend()
+plt.show()

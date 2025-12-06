@@ -1,0 +1,6 @@
+stock['Daily Return'] = stock['Close'].pct_change()
+
+plt.figure(figsize=(10,5))
+stock['Daily Return'].hist(bins=100)
+plt.title("Daily Return Distribution")
+plt.show()
